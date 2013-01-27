@@ -1,0 +1,13 @@
+application: placemeapp
+version: 3
+runtime: python27
+api_version: 1
+threadsafe: true
+
+handlers:
+- url: /(.*.png)
+  static_files: images/\1
+  upload: images/*
+
+- url: /api/data.json/?
+  script: placeme.placeme.app
